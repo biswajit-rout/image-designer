@@ -1,4 +1,7 @@
 # ImageEditorTool
+![image](https://user-images.githubusercontent.com/24861502/133314515-386079cc-c44b-40bb-a966-879ca8021857.png)
+Demo URL:  (https://biswajit-rout.github.io/image-designer/).
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.3.
 
