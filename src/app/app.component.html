@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row header">
+    <div class="col-md-12 text-center text-success">
+      <h1>Image Filter Online</h1>
+    </div>
+    <!-- <div class="col-md-3">
+            <div class="range-slider">
+                <input class="range-slider__range" type="range" value="-3000" min="0" max="3000" step="50">
+                <span class="range-slider__value">0</span>
+              </div>
+        </div> -->
+
+  </div>
+  <div class="row img-filter-container">
+    <div class="col-md-6 image-container">
+      <!-- <img src="http://localhost:4200/favicon.ico" alt="Smiley face" height="400" width="400  "> -->
+       <svg #svgContent xmlns="http://www.w3.org/2000/svg" xmlns:xhtml="http://www.w3.org/1999/xhtml" width="100%" height="100%"  id="svgContent" overflow="hidden">
+            <defs>
+                <clipPath class="boundryClipPath" id="boundryClipPath0">
+                    <rect aHeight="11.69" aWidth="8.27" height="283" width="200" y="112.27991" x="146.72622" id="boundRectangle"></rect>
+                </clipPath>
+                <filter style="color-interpolation-filters:sRGB;" id="filter2028">
+                    <feColorMatrix type="matrix" id="feColorMatrix2028" result="colormatrix" values="0"></feColorMatrix>
+                </filter> 
+            </defs>
+            <g   id="layer_area_0" style="pointer-events:all" filter="url('#filter2028')"> 
+                <image xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" height="100%" width="100%" xlink:href="https://upload.wikimedia.org/wikipedia/commons/9/91/F-15_vertical_deploy.jpg" id="xe_8h26"></image>
+            </g>
+        </svg>
+
+    </div>
+    <div class="col-md-6 filter-container">
+      <div class="slider-container" *ngFor="let filterVal of filterValArr;let i=index ">
+        <div class="range-slider">
+          <input class="range-slider__range" type="range" [value]="filterVal" min="-3" max="3"   step="0.2" (input)="rangeValChange($event,i,filterVal)">
+          <span class="range-slider__value">{{defaultFilterArr[i]}}</span>
+        </div>
+      </div> 
+    </div>
+  </div>
+  <!-- Download /Sample filter  container -->
+  <div class="row">
+      <div class="col-md-6 download-wrap">
+          <button class="btn btn-primary">Show code</button>
+          <button  class="btn btn-primary" (click)="downloadImage()">Download</button>
+          <button class="btn btn-primary">Show some sample filter</button>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12 sample-filer-list">
+        <div  *ngFor="let filter of filterListArr;let findex=index" class="filer-item" (click)="applyFilterFromList(findex)">{{filter.name}}</div>
+      </div>
+      <pre>
+               This text is
+         in a fixed-pitch
+               font, and it preserves
+         both    spaces and line breaks
+      </pre>
+  </div>
+  <canvas #captureCanvas width="500" width="500"></canvas>
+</div>
